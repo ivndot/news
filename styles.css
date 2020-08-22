@@ -44,15 +44,22 @@ body{
     color: #ffffff;
 }
 
-.container .header nav{
+.container .header .nav{
     flex:1;
     margin-left: 30px;
 }
 
-.container .header nav a{
+.container .header .btn-menu{
+    display: none;
+}
+.container .header .nav a{
     text-decoration: none;
     font-size: 16px;
     padding: 10px 15px;
+}
+
+#side-nav{
+    display: none;
 }
 
 .container .header img{
@@ -209,7 +216,7 @@ body{
 .footer .foot{
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .footer .foot .unir{
@@ -245,4 +252,80 @@ body{
 
 .footer .foot .unir .foot-content ul a:hover{
     text-decoration: underline;
+}
+
+/*
+    RESPONSIVE 2 (MOBILE)
+*/
+
+@media screen and (max-width:739px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+                             "main-notice"
+                             "notice1-1" 
+                             "notice1-2" 
+                             "notice1-3"
+                             "notice1-4"
+                             "widget1"
+                             "notice2-1"
+                             "notice2-2"
+                             "notice2-3"
+                             "notice2-4"
+                             "widget2"
+                             "social";
+    }
+
+    .container .news img{
+        width: 100%;
+        height: 250px;
+    }
+
+    .footer{
+        grid-template-columns: 1fr;
+    }
+
+    /*
+        MENU
+    */
+    .container .header .btn-menu{
+        display: inline;
+        font-size: 25px;
+    }
+    /*DISAPPEAR THE SEARCH ICON*/
+    .container .header .search{
+        display: none;
+    }
+    /*MAKING THE SIDE NAV AND HIDDEN THE NAV*/
+    .container .header .nav{
+        display: none;
+    }
+
+    #side-nav{
+        height: 100%;
+        width: 0;/*we are gonna change this with js*/
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #000000; /* Black*/
+        overflow-x: hidden;/*Disable horizontal scroll*/
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        position: absolute; /*salga del flow del html*/
+        display: block;
+    }
+
+    .nav a{
+        display: block;
+        font-size: 20px;
+        color: #b7b3b3;
+        padding: 10px 30px;
+        text-decoration: none;
+    }
+
+    .nav a:hover{
+        color: #ffffff;
+        transition: .3s;
+    }
+    
 }
