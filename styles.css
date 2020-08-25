@@ -246,3 +246,25 @@ body{
 .footer .foot .unir .foot-content ul a:hover{
     text-decoration: underline;
 }
+
+/*
+    RESPONSIVE 1
+*/
+@media screen and ( max-width:909px ){
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header"
+                             "main-notice main-notice"
+                             "notice1-1 notice1-2"
+                             "notice1-3 notice1-4"
+                             "widget1 widget1 "
+                             "notice2-1 notice2-2 "
+                             "notice2-3 notice2-4 "
+                             "widget2 widget2 "
+                             "social social ";
+    }
+
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
